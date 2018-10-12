@@ -16,17 +16,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
 import { FormsModule } from '@angular/forms';
-
-
-
-
-
+import { EncuestasComponent } from './huesped/encuestas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    EncuestasComponent,
   ],
   imports: [
     BrowserModule,

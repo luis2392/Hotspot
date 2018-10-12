@@ -1,4 +1,4 @@
-function init_plugis() {
+function init_plugins() {
 
 
 
