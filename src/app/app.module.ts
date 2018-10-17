@@ -15,22 +15,23 @@ import { ServiceModule } from './services/service.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
-import { FormsModule } from '@angular/forms';
-import { EncuestasComponent } from './huesped/encuestas.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EncuestaComponent } from './huesped/encuesta/encuesta.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    EncuestasComponent,
+    EncuestaComponent
   ],
   imports: [
     BrowserModule,
     APP_ROUTES,
     PagesModule,
     FormsModule,
-    ServiceModule
+    ServiceModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

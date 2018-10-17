@@ -1,19 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
-
-declare function init_plugins();
-
 @Component({
   selector: 'app-encuestas',
   templateUrl: './encuestas.component.html',
-  styleUrls: ['./encuestas.component.css']
+  styles: []
 })
 export class EncuestasComponent implements OnInit {
 
-  constructor(  ) {}
+  constructor() { }
 
   ngOnInit() {
-    init_plugins();
   }
 
 }

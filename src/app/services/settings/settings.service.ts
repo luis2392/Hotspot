@@ -4,11 +4,11 @@ import { DOCUMENT } from '@angular/platform-browser';
 @Injectable()
 
 export class SettingsService {
-  
+
   ajustes: Ajustes = {
     temaUrl: 'assets/css/colors/default.css',
     tema: 'default'
-  }
+  };
 
 
   constructor( @Inject(DOCUMENT) private _document ) {
@@ -16,7 +16,7 @@ export class SettingsService {
   }
 
   guardarAjustes() {
-  
+
     localStorage.setItem('ajustes', JSON.stringify( this.ajustes ) );
   }
 
