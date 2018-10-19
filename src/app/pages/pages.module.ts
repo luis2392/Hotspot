@@ -1,27 +1,30 @@
 import { NgModule} from '@angular/core';
 import { PAGES_ROUTES } from './pages.routes';
-
 import {FormsModule} from '@angular/forms';
-
 import { SharedModule } from '../shared/shared.module';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
-import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
+
+// PIPES
+import { PipesModule } from '../pipes/pipes.module';
+
 // ng2 charts, libreria para graficar.
 import { ChartsModule } from 'ng2-charts';
+
+
+import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
 import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { EncuestasComponent } from './encuestas/encuestas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
-
-// temporal
-
+import { ProfileComponent } from './profile/profile.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-    declarations: [
+    declarations: [ // Registrar cada componente
         PagesComponent,
         DashboardComponent,
         ProgressComponent,
@@ -30,8 +33,9 @@ import { RxjsComponent } from './rxjs/rxjs.component';
         GraficoDonaComponent,
         AccoutSettingsComponent,
         PromesasComponent,
-        RxjsComponent, // Registrar cada componente
-        EncuestasComponent
+        RxjsComponent,
+        EncuestasComponent,
+        ProfileComponent
     ],
     exports: [
         DashboardComponent,
@@ -40,10 +44,12 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     ],
 
     imports: [
+        CommonModule,
         SharedModule,
         PAGES_ROUTES,
         FormsModule,
         ChartsModule,
+        PipesModule
     ]
 
 })

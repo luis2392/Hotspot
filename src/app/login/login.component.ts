@@ -52,17 +52,18 @@ export class LoginComponent implements OnInit {
 
   }
 
-  attachSignin( element ) { // Adjunta la información de Google
+   attachSignin( element ) { // Adjunta la información de Google
 
-    this.auth2.attachClickHandler ( element, {}, (googleUser) => {
+    this.auth2.attachClickHandler( element, {}, (googleUser) => {
 
+      // let profile = googleUser.getBasicProfile();
       let token = googleUser.getAuthResponse().id_token;
 
-       // let profile = googleUser.getBasicProfile(); Obtiene los datos del usuario que se autentico
+      this._usuarioService.loginGoogle( token )
+              .subscribe( () => window.location.href = '#/dashboard'  );
 
-      this._usuarioService.loginGoogle ( token )
-              .subscribe( ()  => window.location.href = '#/dashboard');
     });
+
   }
 
   ingresar( forma: NgForm) {

@@ -8,6 +8,7 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { EncuestasComponent } from './encuestas/encuestas.component';
 import { LoginGuardGuard } from '../services/service.index';
+import { ProfileComponent } from './profile/profile.component';
 
 const pagesRoutes: Routes = [
     {
@@ -22,6 +23,7 @@ const pagesRoutes: Routes = [
             { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJS' } },
             { path: 'encuestas', component: EncuestasComponent, data: { titulo: 'Encuestas' } },
             { path: 'account-settings', component: AccoutSettingsComponent, data: { titulo: 'Ajustes de Usuario' } },
+            { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil de Usuario' } },
             { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
         ]
     }
