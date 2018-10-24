@@ -25,7 +25,7 @@ export class UsuarioService {
     return ( this.token.length > 5 ) ? true : false;
   }
 
-  cargarStorage() {
+  cargarStorage() { // Cargar la información del Storage, para validar si existe información en él.
 
     if ( localStorage.getItem('token')) {
       this.token = localStorage.getItem('token');
@@ -37,7 +37,7 @@ export class UsuarioService {
 
   }
 
-  guardarStorage( id: string, token: string, usuario: Usuario ) {
+  guardarStorage( id: string, token: string, usuario: Usuario ) { // Guardar información en el storage.
 
     localStorage.setItem('id', id );
     localStorage.setItem('token', token );
@@ -47,7 +47,7 @@ export class UsuarioService {
     this.token = token;
   }
 
-  logout() {
+  logout() { // Vacia las variables, para que no queden datos de autenticación.
     this.usuario = null;
     this.token = '';
 
@@ -57,7 +57,7 @@ export class UsuarioService {
     this.router.navigate(['/login']);
   }
 
-  loginGoogle( token: string ) {
+  loginGoogle( token: string ) { // Login con api de Google SignIn
 
     let url = URL_SERVICIOS + '/login/google';
 
@@ -70,7 +70,7 @@ export class UsuarioService {
 
   }
 
-  login( usuario: Usuario, recordar: boolean = false ) {
+  login( usuario: Usuario, recordar: boolean = false ) { // Login con usuarios del sistema.
 
     if ( recordar ) {
       localStorage.setItem('email', usuario.email );
